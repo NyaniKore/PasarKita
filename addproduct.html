@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List a Product - PasarKita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Universal Header (No Search, No Cart) -->
+    <header class="header">
+        <div class="header__topbar">
+            <div class="container flex-between">
+                <div><span id="welcome-message" style="display: none;"></span></div>
+<div class="header__topbar-nav">
+    <!-- This link will now appear globally -->
+    <a href="messages.html">Messages</a>
+    <a href="notifications.html">Notifications</a>
+    <a href="selleraccount.html">Seller Account</a>
+    <div class="user-profile"><a href="login.html">Log in</a></div>
+</div>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="container flex-between">
+                <h1 class="header__logo"><a href="index.html">PasarKita★</a></h1>
+                <!-- Quick return link instead of the search bar -->
+                <div style="text-align: right; flex-grow: 1;">
+                    <a href="selleraccount.html" style="color: white; font-weight: 500; font-size: 15px; text-decoration: underline;">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-lg auth-layout">
+        <div class="auth-wrapper surface-card" style="max-width: 500px;">
+            <h2 class="auth-title">Create a Listing</h2>
+            <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 24px;">Add a new product to your shop.</p>
+            
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:8px; font-weight:600;">Product Title</label>
+                    <input type="text" id="prod-title" class="form-input" required placeholder="e.g., Kek Lapis Sarawak">
+                </div>
+                
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:8px; font-weight:600;">Price (RM)</label>
+                    <input type="number" id="prod-price" class="form-input" required min="1" step="0.50" placeholder="0.00">
+                </div>
+
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:8px; font-weight:600;">Location</label>
+                    <select id="prod-location" class="form-input" required>
+                        <option value="Kuching, Sarawak">Kuching, Sarawak</option>
+                        <option value="Sibu, Sarawak">Sibu, Sarawak</option>
+                        <option value="Serian, Sarawak">Serian, Sarawak</option>
+                        <option value="Samarahan, Sarawak">Samarahan, Sarawak</option>
+                        <option value="Miri, Sarawak">Miri, Sarawak</option>
+                        <option value="Bintulu, Sarawak">Bintulu, Sarawak</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label style="display:block; margin-bottom:8px; font-weight:600;">Product Image (Mandatory)</label>
+                    <input type="file" id="prod-img" class="form-input" accept="image/*" required style="padding: 8px;">
+                    <!-- UPDATED: 500px minimum text -->
+                    <small style="color: var(--color-primary); font-size: 12px; font-weight: bold;">Minimum resolution requirement: 500x500px.</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full" style="padding: 14px; margin-top: 16px;">List Product</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
